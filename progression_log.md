@@ -28,3 +28,14 @@ images and the degraded images that we just prepared.
 Now that we have our low resolution images and with all image quality metrics functioning properly,
 we can start building the SRCNN. In Keras, it's as simple as adding layers one after the other.
 The achitecture and hyper parameters of the SRCNN network can be obtained from the cited publication.
+
+## 5: Deploying the SRCNN Model
+
+With the model being defined, it can now be used for single-image super-resolution. However, we will need to define a couple 
+of image processing functions. It will be necessary to preprocess the images extensively before using them as inputs to the network. 
+This processing will include cropping and color space conversions.
+
+To save us the time it takes to train a deep neural network, we will be loading pre-trained weights for the SRCNN. These weights can be found at the following GitHub page: https://github.com/MarkPrecursor/SRCNN-keras
+
+Once we have tested our network, we can perform single-image super-resolution on all of our input images. 
+Furthermore, after processing, we can calculate the PSNR, MSE, and SSIM on the images that we produce. 
